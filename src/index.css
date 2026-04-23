@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-surface: #0d1117;
+  --color-surface-dim: #0d1117;
+  --color-surface-bright: #30363d;
+  --color-surface-container-lowest: #010409;
+  --color-surface-container-low: #0d1117;
+  --color-surface-container: #161b22;
+  --color-surface-container-high: #21262d;
+  --color-surface-container-highest: #30363d;
+  
+  --color-on-surface: #dfe2eb;
+  --color-on-surface-variant: #8b949e;
+  
+  --color-primary: #39ff14; /* Terminal Green */
+  --color-on-primary: #000000;
+  --color-primary-container: rgba(57, 255, 20, 0.1);
+  --color-on-primary-container: #39ff14;
+  
+  --color-secondary: #00fbfb; /* Cyan */
+  --color-secondary-container: rgba(0, 251, 251, 0.1);
+
+  --color-syntax-orange: #ffb86c;
+  --color-syntax-purple: #bd93f9;
+  --color-syntax-pink: #ff79c6;
+  --color-syntax-cyan: #8be9fd;
+  --color-syntax-yellow: #f1fa8c;
+
+  --animate-cursor-blink: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans selection:bg-primary/30 selection:text-white min-h-screen;
+    background-image: radial-gradient(#30363d 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 251, 251, 0.2);
+  }
+}
